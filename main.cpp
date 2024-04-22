@@ -6,17 +6,20 @@
  */
 
 #include "Helper.h"
-#include "Drivers/Core/Inc/gpio.h"
+#include "stm32Libs/F4/Pin.h"
 
 int main(void)
 {
 	Helper::initHal();
 	Helper::SystemClock_Config();
-	MX_GPIO_Init();
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	Pin testPin(GPIOA, GPIO_PIN_5,  Pin::TF_PIN_OUT_PP, Pin::TF_PIN_PULL_NONE, GPIO_SPEED_FREQ_LOW, 0);
+	testPin.init();
 
 	while(true)
 	{
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		HAL_Delay(500);
+		testPin.toggleValue();
+		HAL_Delay(1000);
 	}
 }

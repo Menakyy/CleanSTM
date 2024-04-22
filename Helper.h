@@ -5,10 +5,10 @@
  *      Author: konrad
  */
 
-#ifndef HELPER_H_
-#define HELPER_H_
+#ifndef HELPER
+#define HELPER
 
-#include "stm32f3xx_hal.h"
+#include "stm32f4xx_hal.h"
 
 class Helper
 {
@@ -21,4 +21,4 @@ public:
 	static void Error_Handler();
 };
 
-#endif /* HELPER_H_ */
+#endif /* HELPER */
