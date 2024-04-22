@@ -8,7 +8,7 @@
 #ifndef HELPER
 #define HELPER
 
-#include "stm32f4xx_hal.h"
+#include "stm32f3xx_hal.h"
 
 class Helper
 {

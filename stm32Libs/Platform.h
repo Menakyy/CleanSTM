@@ -13,8 +13,8 @@
 #include <stdint.h>
 
 
-#ifdef PLATFORM_STM32F2
-    #include "stm32f2xx_hal.h"
+#ifdef PLATFORM_STM32F3
+    #include "stm32f3xx_hal.h"
 #endif
 
 #ifdef PLATFORM_STM32F4
