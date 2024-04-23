@@ -10,19 +10,36 @@
                 "${workspaceFolder}/stm32Libs/F3/st/STM32F3xx_HAL_Driver/Inc/Legacy"
             ],
             "defines": [
-                // "DEBUG",
-                // "PLATFORM_STM32F4",
-                // "STM32F446xx",
-                // "STM32",
-                // "STM32F4",
-                // "STM32F446RETx",
-                // "NUCLEO_F446RE"
                 "PLATFORM_STM32F3",
                 "STM32F303xE",
                 "STM32",
                 "STM32F3",
                 "STM32F303RETx",
                 "NUCLEO_F303RE"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "STM32446RE",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/stm32Libs/F4/st/CMSIS/Include",
+                "${workspaceFolder}/stm32Libs/F4/st/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/stm32Libs/F4/st/STM32F4xx_HAL_Driver/Inc",
+                "${workspaceFolder}/stm32Libs/F4/st/STM32F4xx_HAL_Driver/Inc/Legacy"
+            ],
+            "defines": [
+                "DEBUG",
+                "PLATFORM_STM32F4",
+                "STM32F446xx",
+                "STM32",
+                "STM32F4",
+                "STM32F446RETx",
+                "NUCLEO_F446RE"
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",

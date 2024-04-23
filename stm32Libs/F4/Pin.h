@@ -12,43 +12,42 @@
 
 class Pin
 {
-    public:
-    enum TFPinMode
+public:
+    enum PinMode
     {
-        TF_PIN_OUT_PP,
-        TF_PIN_OUT_OD,
-        TF_PIN_AF_PP,
-        TF_PIN_AF_OD,
-        TF_PIN_IN,
-        TF_PIN_ANALOG,
+        PIN_OUT_PP,
+        PIN_OUT_OD,
+        PIN_AF_PP,
+        PIN_AF_OD,
+        PIN_IN,
+        PIN_ANALOG,
     };
 
-    enum TFPinPull
+    enum PinPull
     {
-        TF_PIN_PULL_NONE,
-        TF_PIN_PULL_UP,
-        TF_PIN_PULL_DOWN,
+        PIN_PULL_NONE,
+        PIN_PULL_UP,
+        PIN_PULL_DOWN,
     };
 
-	Pin(GPIO_TypeDef* gpiox, uint32_t pin, TFPinMode mode, TFPinPull pull, uint32_t speed, uint32_t alternate);
+    Pin(GPIO_TypeDef* gpiox, uint32_t pin, PinMode mode, PinPull pull, uint32_t speed, uint32_t alternate);
 
-	void init();
-	void reconfigure(TFPinMode mode, TFPinPull pull, uint32_t alternate);
+    void init();
+    void reconfigure(PinMode mode, PinPull pull, uint32_t alternate);
 
 private:
-	GPIO_TypeDef* _gpiox;
-	uint32_t _pin;
-	uint32_t _speed;
-
+    GPIO_TypeDef* _gpiox;
+    uint32_t      _pin;
+    uint32_t      _speed;
 
 public:
-	bool getValue();
-	void setValue(bool);
-	void toggleValue();
+    bool getValue();
+    void setValue(bool);
+    void toggleValue();
 
 private:
-    TFPinMode _mode;
-    TFPinPull _pull;
+    PinMode  _mode;
+    PinPull  _pull;
     uint32_t _alternate;
 };
 
