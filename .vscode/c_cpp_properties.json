@@ -15,7 +15,8 @@
                 "STM32",
                 "STM32F3",
                 "STM32F303RETx",
-                "NUCLEO_F303RE"
+                "NUCLEO_F303RE",
+                "USE_HAL_DRIVER"
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
@@ -39,7 +40,8 @@
                 "STM32",
                 "STM32F4",
                 "STM32F446RETx",
-                "NUCLEO_F446RE"
+                "NUCLEO_F446RE",
+                "USE_HAL_DRIVER"
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",

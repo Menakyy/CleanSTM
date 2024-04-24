@@ -28,7 +28,11 @@ int main(void)
     {
         if (blueButton.getValue())
         {
-            greenLed.toggleValue();
+            greenLed.setValue(false);
+        }
+        else
+        {
+            greenLed.setValue(true);
         }
     }
 }

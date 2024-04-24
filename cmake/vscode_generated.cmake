@@ -69,6 +69,7 @@ set(symbols_c_SYMB ${symbols_c_SYMB}
 					"STM32F3"
 					"STM32F303RETx"
 					"NUCLEO_F303RE"
+					"USE_HAL_DRIVER"
 )
 
 set(symbols_cxx_SYMB ${symbols_cxx_SYMB}
@@ -78,6 +79,7 @@ set(symbols_cxx_SYMB ${symbols_cxx_SYMB}
 					"STM32F3"
 					"STM32F303RETx"
 					"NUCLEO_F303RE"
+					"USE_HAL_DRIVER"
 )
 set(symbols_asm_SYMB ${symbols_asm_SYMB}
     

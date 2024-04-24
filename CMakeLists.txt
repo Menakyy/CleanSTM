@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-#
-# User is free to modify the file as much as necessary
-#
-
-#list(APPEND CMAKE_MODULE_PATH "C:/Users/user1/Downloads/CmakeTestProject/cmake")
 list(APPEND CMAKE_MODULE_PATH "{{sr:cmake_path}}")
 message("Build CMAKE_MODULE_PATH: " ${CMAKE_MODULE_PATH})
 include("cmake/gcc-arm-none-eabi.cmake")
@@ -13,7 +8,7 @@ message("Build CMAKE_MODULE_PATH: " ${CMAKE_MODULE_PATH})
 # Core project settings
 project(test)
 enable_language(C CXX ASM)
-message("Build type: " ${CMAKE_BUILD_TYPE})
+message("Build type: " ${CMAKE_BUILD_TYPE}) # Debug / Release
 
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
@@ -62,6 +57,8 @@ set(compiler_OPTS)
 # Linker options
 set(linker_OPTS)
 
+# set_directory_properties(PROPERTIES COMPILE_OPTIONS "-Wno-old-style-cast;-Wno-useless-cast" DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/stm32Libs/F3/st")
+
 # Now call generated cmake
 # This will add script generated
 # information to the project
@@ -104,17 +101,16 @@ target_link_libraries(${CMAKE_PROJECT_NAME} ${link_LIBS})
 target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
     ${cpu_PARAMS}
     ${compiler_OPTS}
-    -Wall
-    -Wextra
-    -Wpedantic
-    -Wno-unused-parameter
     $<$<COMPILE_LANGUAGE:C>: >
-    $<$<COMPILE_LANGUAGE:CXX>:
-
-    # -Wno-volatile
-    # -Wold-style-cast
-    # -Wuseless-cast
-    # -Wsuggest-override
+    $<$<COMPILE_LANGUAGE:CXX>: 
+        -Wno-volatile
+        -Wold-style-cast
+        -Wuseless-cast
+        -Wsuggest-override
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Wno-unused-parameter
     >
     $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp -MMD -MP>
     $<$<CONFIG:Debug>:-Og -g3 -ggdb>
