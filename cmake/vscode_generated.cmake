@@ -28,6 +28,7 @@ set(sources_SRCS ${sources_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/stm32Libs/F3/Pin.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/stm32Libs/F3/System.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/platform/PCB_F303RE.cpp
 	# c
 	${CMAKE_CURRENT_SOURCE_DIR}/stm32Libs/F3/st/syscalls.c
 	${CMAKE_CURRENT_SOURCE_DIR}/stm32Libs/F3/st/sysmem.c
